@@ -1,6 +1,5 @@
 package AbstractFactoryPattern;
 
-import AbstractFactoryPattern.Adress.Address;
 import AbstractFactoryPattern.Adress.AddressFactory;
 import AbstractFactoryPattern.Adress.ChengDu;
 import AbstractFactoryPattern.shape.*;
