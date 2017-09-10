@@ -1,4 +1,4 @@
-package AbstractFactoryPattern;
+package AbstractFactoryPattern.Color;
 
 public class White implements Color{
     @Override

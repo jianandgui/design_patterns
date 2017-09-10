@@ -1,8 +1,9 @@
-package AbstractFactoryPattern;
+package AbstractFactoryPattern.shape;
 
 import AbstractFactoryPattern.AbstractFactory;
-import AbstractFactoryPattern.Color;
-import AbstractFactoryPattern.Shape;
+import AbstractFactoryPattern.ExceptionUtils;
+import AbstractFactoryPattern.Color.Color;
+import AbstractFactoryPattern.size.Big;
 
 public class ShapesFactory implements AbstractFactory{
     @Override
@@ -13,6 +14,11 @@ public class ShapesFactory implements AbstractFactory{
 
     @Override
     public Object getColor(Class<? extends Color> clazz) {
+        return null;
+    }
+
+    @Override
+    public Object getSize(Class<Big> clazz) {
         return null;
     }
 }
