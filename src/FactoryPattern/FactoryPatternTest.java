@@ -13,5 +13,7 @@ public class FactoryPatternTest {
         Shape shape1 = factory.createShape("Rectangle");
         shape1.draw();
 
+        Circle circle = (Circle) ShapeFactory.getClass(Circle.class);
+        circle.draw();
     }
 }
