@@ -4,11 +4,9 @@ public class ExceptionUtils {
 
     public static Object getObjByClazz(Class<?extends Object> clazz) {
 
-        Object obj = null;
         if (clazz == null) {
             return null;
         }
-
         try {
             return Class.forName(clazz.getName()).newInstance();
         } catch (ClassNotFoundException e) {
