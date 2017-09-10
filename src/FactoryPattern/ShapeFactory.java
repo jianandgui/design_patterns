@@ -24,10 +24,14 @@ public class ShapeFactory  {
     public static Object getClass(Class<? extends Shape> clazz) {
 
         Object obj = null;
-        try{
+        try {
             obj = Class.forName(clazz.getName()).newInstance();
 
-        }catch (Exception e){
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
         return obj;
