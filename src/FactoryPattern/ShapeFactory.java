@@ -1,11 +1,11 @@
 package FactoryPattern;
 
-import sun.security.provider.SHA;
 
-import java.io.OutputStreamWriter;
+import AbstractFactoryPattern.ExceptionUtils;
 
 public class ShapeFactory  {
 
+    //方案：缺点是每增加一个派生类 就必须修改factory逻辑
     public Shape createShape(String shapeType) {
 
         if (shapeType == null) {
@@ -21,20 +21,10 @@ public class ShapeFactory  {
         return null;
     }
 
+    //使用反射解决需要反复修改factory类的问题
     public static Object getClass(Class<? extends Shape> clazz) {
 
-        Object obj = null;
-        try {
-            obj = Class.forName(clazz.getName()).newInstance();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return obj;
+        return ExceptionUtils.getObjByClazz(clazz);
     }
 
 }
